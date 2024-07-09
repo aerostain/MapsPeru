@@ -2,6 +2,7 @@ library(sf)
 library(tidyverse)
 library(magrittr)
 library(ggdark)
+library(plotly)
 
 map0 <- st_read("gadm41_PER_shp/gadm41_PER_0.shp")
 map1 <- st_read("gadm41_PER_shp/gadm41_PER_1.shp")
@@ -21,6 +22,7 @@ ggplot() +
 
 map3 %>% str()
 
+w1<-
 map3 %>%
   filter(NAME_2 == "Lima") %>%
   ggplot() +
@@ -28,4 +30,5 @@ map3 %>%
   geom_sf(aes(fill = NAME_3)) +
   dark_mode()
 
+ggplotly(w1)
 map3 %>% view()
