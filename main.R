@@ -20,3 +20,12 @@ ggplot() +
   dark_mode()
 
 map3 %>% str()
+
+map3 %>%
+  filter(NAME_2 == "Lima") %>%
+  ggplot() +
+  geom_sf(data = map0, fill = "blue", alpha = .2) +
+  geom_sf(aes(fill = NAME_3)) +
+  dark_mode()
+
+map3 %>% view()
